@@ -7,12 +7,13 @@
     }
     if($_SERVER['REQUEST_METHOD'] = "POST") //Added an if to keep the page secured
     {
+        include "db_connect.php";
         $details = mysql_real_escape_string($_POST['szczegoly']);
         $time = strftime("%X");//time
         $date = strftime("%B %d, %Y");//date
         $decision ="no";
-        mysql_connect("localhost", "root","usbw") or die(mysql_error()); //Connect to server
-        mysql_select_db("pierwsza_db") or die("Cannot connect to database"); //Connect to database
+        $vendor = mysql_real_escape_string($_POST['dostawca']);
+        /*$ven = mysql_query("SELECT id FROM dostawca WHERE nazwa='$vendor");*/
         foreach($_POST['publiczny'] as $each_check) //gets the data from the checkbox
         {
             if($each_check !=null ){ //checks if the checkbox is checked
@@ -20,8 +21,9 @@
             }
         }
         
-        mysql_query("INSERT INTO list (szczegoly, data_wpisu, czas_wpisu, publiczny, dostawca_id) VALUES ('$details','$date','$time','$decision', '1')"); //SQL query
+        mysql_query("INSERT INTO list (szczegoly, data_wpisu, czas_wpisu, publiczny, dostawca_id) VALUES ('$details','$date','$time','$decision', '$vendor')"); //SQL query
         header("location: home.php");
+        
     }
     else
     {
