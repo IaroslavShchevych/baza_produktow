@@ -20,7 +20,7 @@
             }
         }
         
-        mysql_query("INSERT INTO list (szczegoly, data_wpisu, czas_wpisu, publiczny) VALUES ('$details','$date','$time','$decision')"); //SQL query
+        mysql_query("INSERT INTO list (szczegoly, data_wpisu, czas_wpisu, publiczny, dostawca_id) VALUES ('$details','$date','$time','$decision', '1')"); //SQL query
         header("location: home.php");
     }
     else
