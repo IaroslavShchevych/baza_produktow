@@ -1,0 +1,8 @@
+ALGORYTM TWORZENIA PROJEKTU
+
+1. Tworzenie schematu BD wedlug celej projektu (przez yEd).
+2. Zalozenie BD i wszystkich tabele wedlug schematu (przez PHPMyAdmin od USBWebserver).
+3. Tworzenie web-interface dla korzystania danych z utworzonej BD i ich zmiany (tworzenie strony HTML/CSS+PHP przez Notepad++).
+4. Testowanie projektu i diagnostowanie problemow (urochamianie projektu przez Chrome/Mozilla Firefox oraz inne przegladarki).
+5. Opublikowanie projektu na web-hostingu, lub lokalnym serverze dla codziennego korzystania (przenisienie plikow projektu oraz BD w robocze srodowisko dla udostepnienia uzytkownikam).
+
