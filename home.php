@@ -14,9 +14,35 @@
 	$user = $_SESSION['imie']; //assigns user value
 	?>
 	<body>
-		<h2>Początkowa strona</h2>
-		<p>Witam, <?php Print "$user"?>!</p> <!--Displays user's name-->
-		<a href="logout.php">Wylogować się</a><br/><br/>
+		<!-- HEADER -->
+		<div name="id">
+			<h2>Początkowa strona</h2>
+			<p>Witam, <?php Print "$user"?>! <br/> <a href="logout.php">Wylogować się</a> </p> <!--Displays user's name-->		
+		</div>
+		
+		<!-- MAIN AREA WITH TWO SIDEBARS -->
+
+		<div id="wrapper" style="text-align:center;">
+			<div id="left sidebar" style="border:1px solid #000; display:inline-block;"> 
+				<h4> Wybierz Liste dla pracy </h4> 
+				<a href="#">Lista produktów</a> <br/>
+				<!-- >>>>DOES'N WORK LINE BELOW<<<<< -->
+				<span onClick="StartFrame()"> Lista dostawców </span>
+			</div>
+			<div id="main_frame" style="border:1px solid red; display:inline-block;"> Some content  </div>
+		</div>
+		
+		
+<script type="text/javascript">
+	function StartFrame(){
+			document.getElementById("main_frame").innerHTML = '<?php include "vendors_table.php"; ?>' ;
+	}
+
+</script>
+		
+		<!-- CODE FOR REBUILDING -->
+		
+		<h6> CODE FOR REBUILDING </h6>
 		<form action="add.php" method="POST">
 			Dodać do listy produktów: <input type="text" name="szczegoly"/><br/>
 			Czy publiczny zapis? <input type="checkbox" name="publiczny[]" value="yes"/><br/>
