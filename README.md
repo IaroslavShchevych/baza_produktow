@@ -35,3 +35,5 @@ JAK ZAINSTALOWAĆ PROJEKT NA PENDRIVE?
 6. Otworzyć strone " http://localhost:8080/ " w przeglądarce.
 7. Zarejestruj się do BD i zaczni pracować.
 
+ALGORITHM TWORZENIA PROJEKTU
+Za <a href="https://github.com/IaroslavShchevych/baza_produktow/blob/master/Algorytm%20tworzenia%20projektu.txt">odnośnikiem. </a>
