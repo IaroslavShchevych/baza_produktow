@@ -1,20 +1,3 @@
-<form action="add.php" method="POST">
-			Dodać do listy produktów: <input type="text" name="szczegoly"/><br/>
-			Czy publiczny zapis? <input type="checkbox" name="publiczny[]" value="yes"/><br/>
-			Zaznacz dostawcę: 
-			<?php
-				include "db_connect.php";
-				$result = mysql_query("SELECT id, nazwa FROM dostawca"); 
-				 echo "<select name='dostawca'>"; 
-				 while($row = mysql_fetch_array($result)) 
-				 { 
-				    /*echo "<option value = '".$row['id']."'>".$row['nazwa']."</option>";*/ 
-				    echo "<option value='" . $row['id'] . "'>". $row['nazwa'] . "</option>";
-				 }
-				 echo "</select>"
-			?> <br/>
-			<input type="submit" value="Dodaj do listy"/>
-		</form>
 		<h2 align="center">Lista produktów</h2>
 		<table border="1px" width="100%">
 			<tr>
@@ -29,7 +12,7 @@
 
 			</tr>
 			<?php
-				//$query = mysql_query("SELECT * FROM list INNER JOIN dostawca ON list.dostawca_id = dostawca.id");
+			include "db_connect.php";
 			$query = mysql_query("SELECT list.*, dostawca.* FROM list, dostawca WHERE list.dostawca_id=dostawca.id");
 				while($row = mysql_fetch_array($query))
 				{
@@ -46,4 +29,23 @@
 				}
 			?>
 		</table>
-		</table>
+		<div id="add_prod" style="text-align:left;">
+			<h4>Dodać produkt do listy produktów:</h4>
+			<form action="add.php" method="POST">
+			Dodać do listy produktów: <input type="text" name="szczegoly"/><br/>
+			Czy publiczny zapis? <input type="checkbox" name="publiczny[]" value="yes"/><br/>
+			Zaznacz dostawcę: 
+			<?php
+				include "db_connect.php";
+				$result = mysql_query("SELECT id, nazwa FROM dostawca"); 
+				 echo "<select name='dostawca'>"; 
+				 while($row = mysql_fetch_array($result)) 
+				 { 
+				    echo "<option value='" . $row['id'] . "'>". $row['nazwa'] . "</option>";
+				 }
+				 echo "</select>"
+			?> <br/>
+			<input type="submit" value="Dodaj do listy"/>
+			</form>
+		</div>
+		

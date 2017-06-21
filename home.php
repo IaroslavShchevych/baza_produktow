@@ -24,12 +24,12 @@
 				<p style="text-align:right;"> Witam, <?php Print "$user"?>! <br/> <a href="logout.php">Wylogować się</a> </p> <!--Displays user's name-->		
 			</div>
 			<div id="main">
-				<div id="menu" style="border:1px solid #000; float:left; width:20%; "> 
+				<div id="menu" style="border:0px solid #000; float:left; width:20%; "> 
 					<h4> Wybierz Liste dla pracy </h4> 
-					<span onClick="MainProd()" >Lista produktów</span>
-					<span onClick="MainVen()" > Lista dostawców </span>
+					<a href="#" onClick="MainProd()" >Lista produktów</a> <br/>
+					<a href="#" onClick="MainVen()" > Lista dostawców </a>
 				</div>			
-				<div id="main_frame" style="border:1px solid red; float: left; width:75%; "> 
+				<div id="main_frame" style="border:0px solid red; float: left; width:78%; "> 
 					<h3> Proszę wybrać szczegółowe dane w menu obok dla ich przeglądu </h3>  
 				</div>
 			</div>
@@ -56,6 +56,15 @@
 		if (r==true)
 	  {
 	  	window.location.assign("delete.php?id=" + id);
+	  }
+	}
+	
+	function myFunctionVen(id)
+		{
+		var r=confirm("Czy naprawde chcesz usunac ten zapis?");
+		if (r==true)
+	  {
+	  	window.location.assign("delete_ven.php?id=" + id);
 	  }
 	}
 	</script>

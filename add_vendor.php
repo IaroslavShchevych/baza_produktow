@@ -18,6 +18,8 @@
     }
     else
     {
-        header("location:home.php"); //redirects back to hom
+        header("location:home.php"); //redirects back to home
     }
+	
+	
 ?>

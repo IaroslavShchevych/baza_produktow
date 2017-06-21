@@ -15,11 +15,13 @@
 	$id_exists = false;
 	?>
 	<body>
-		<h2>Początkowa strona</h2>
-		<p>Witam <?php Print "$user"?>!</p> <!--Displays user's name-->
-		<a href="logout.php">Wylogować się</a><br/>
-		<a href="home.php">Powrot do początkowej</a>
-		<h2 align="center">Obecnie wybrane</h2>
+		<h3 align="center">Edytuj produkt</h3>
+		<div id="header" style="text-align:right">
+			<p>Witam <?php Print "$user"?>!</p> <!--Displays user's name-->
+			<a href="logout.php">Wylogować się</a><br/>
+			<a href="home.php">Powrot do początkowej</a>
+		</div>
+		<h4 align="center">Obecnie wybrane:</h4>
 		<table border="1px" width="100%">
 			<tr>
 				<th>Id</th>
@@ -36,7 +38,8 @@
 					$_SESSION['id'] = $id;
 					$id_exists = true;
 					include "db_connect.php";
-					$query = mysql_query("SELECT * FROM list WHERE product_id='$id'"); // SQL Query
+					/* MySQL request for data of product and its vendor */
+					$query = mysql_query("SELECT list.*, dostawca.* FROM list, dostawca WHERE list.product_id='$id' AND dostawca.id=list.dostawca_id");
 					$count = mysql_num_rows($query);
 
 					if($count > 0)
@@ -49,7 +52,7 @@
 								Print '<td align="center">'. $row['data_wpisu']. " - ". $row['czas_wpisu']."</td>";
 								Print '<td align="center">'. $row['data_edytowania']. " - ". $row['czas_edytowania']. "</td>";
 								Print '<td align="center">'. $row['publiczny']. "</td>";
-								Print '<td align="center">'. $row['dostawca_id']. "</td>";
+								Print '<td align="center">'. $row['nazwa']. "</td>";
 							Print "</tr>";
 						}
 					}
@@ -68,6 +71,7 @@
 		<form action="edit.php" method="POST">
 			Nowy opis: <input type="text" name="szczegoly"/><br/>
 			Nowy dostawca:'; 
+				include "db_connect.php";
 				$result = mysql_query("SELECT id, nazwa FROM dostawca"); 
 				 echo "<select name='dostawca'>"; 
 				 while($row = mysql_fetch_array($result)) 
@@ -76,7 +80,6 @@
 				 }
 				 echo "</select>";				
 		Print '
-			czy publiczny? <input type="checkbox" name="publiczny[]" value="yes"/><br/>
 			<input type="submit" value="Aktualizowac Liste"/>
 		</form>
 		';
@@ -86,6 +89,9 @@
 			Print '<h2 align="center">Niema danych do edytowania.</h2>';
 		}
 		?>
+	<div id="footer" style="clear:both; padding:7px; text-align:center">
+				<p><a href="https://sites.google.com/site/infoteczka/" >(c) ŻAK. Wrocław, 2017 </a></p>
+	</div>
 	</body>
 </html>
 
@@ -95,10 +101,11 @@
 		include "db_connect.php";
 		$id = $_SESSION['id'];
 		$details = mysql_real_escape_string($_POST['szczegoly']);
-		$public = "no";
 		$time = strftime("%X");//time
 		$date = strftime("%B %d, %Y");//date
-		$vendor = mysql_real_escape_string($_POST['dostawca']);
+	$vendor = mysql_real_escape_string($_POST['dostawca']); 
+		echo $vendor;
+		
 		foreach($_POST['publiczny'] as $list)
 		{
 			if($list != null)
@@ -107,7 +114,7 @@
 			}
 		}
 
-		mysql_query("UPDATE list SET szczegoly='$details', publiczny='$public', data_edytowania='$date', czas_edytowania='$time' dostawca_id='$vendor' WHERE product_id='$id'") ;
+		mysql_query("UPDATE list SET szczegoly='$details', data_edytowania='$date', czas_edytowania='$time' dostawca_id='$vendor' WHERE product_id='$id'") ;
 		header("location: home.php");
-	}
+	} 
 ?>
