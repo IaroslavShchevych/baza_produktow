@@ -1,11 +1,11 @@
-Testy web-aplikacji "Baza danych produktów"
+﻿Testy web-aplikacji "Baza danych produktów"
 
-1. Logowanie--> w porażdku
-2. Odbior danych z tabeli "list" (Lista produktów) BD "pierwsza_db"--> w porądku
-3. Odbior danych z tabeli "dostawca" (Lista dostawców) BD "pierwsza_db"--> w porądku
+1. Logowanie--> w porządku
+2. Odbior danych z tabeli "list" (Lista produktów) BD "pierwsza_db"--> w porządku
+3. Odbior danych z tabeli "dostawca" (Lista dostawców) BD "pierwsza_db"--> w porządku
 4. Dodawanie danych do tabeli "list" (Asparagus) --> w porządku 
 5. Dodawanie danych do tabeli "dostawca" (Zywiec Zdrój) --> w porządku
-6. Usuniencie danych z tabeli "list" (Lista produktów) BD "pierwsza_db"--> w porądku
-7. Usuniencie danych z tabeli "dostawca" (Lista dostawców) BD "pierwsza_db"--> w porądku
-8. Edytowanie danych z tabeli "lista"
+6. Usuniencie danych z tabeli "list" (Lista produktów) BD "pierwsza_db"--> w porządku
+7. Usuniencie danych z tabeli "dostawca" (Lista dostawców) BD "pierwsza_db"--> w porządku
+8. Edytowanie danych z tabeli "lista" (Ziemniaki-Ziemniaczki) --> w porządku (na razie nie edytuje dostawce produktu)
 9. Edytowanie danych z "dostawca" (id=5, Verde Verde, kraj: "Portugalia"-->"Costa Verde") --> w porządku

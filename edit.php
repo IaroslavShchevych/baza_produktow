@@ -24,7 +24,7 @@
 		<h4 align="center">Obecnie wybrane:</h4>
 		<table border="1px" width="100%">
 			<tr>
-				<th>Id</th>
+				<th>ID</th>
 				<th>Szczegoly</th>
 				<th>Czas Wpisu</th>
 				<th>Czas Edytowania</th>
@@ -70,16 +70,7 @@
 		Print '
 		<form action="edit.php" method="POST">
 			Nowy opis: <input type="text" name="szczegoly"/><br/>
-			Nowy dostawca:'; 
-				include "db_connect.php";
-				$result = mysql_query("SELECT id, nazwa FROM dostawca"); 
-				 echo "<select name='dostawca'>"; 
-				 while($row = mysql_fetch_array($result)) 
-				 { 
-				    echo "<option value='" . $row['id'] . "'>". $row['nazwa'] . "</option>";
-				 }
-				 echo "</select>";				
-		Print '
+			Czy publiczny? <input type="checkbox" name="publiczny[]" value="tak"/>			
 			<input type="submit" value="Aktualizowac Liste"/>
 		</form>
 		';
@@ -96,6 +87,8 @@
 </html>
 
 <?php
+	
+	
 	if($_SERVER['REQUEST_METHOD'] == "POST")
 	{
 		include "db_connect.php";
@@ -103,8 +96,7 @@
 		$details = mysql_real_escape_string($_POST['szczegoly']);
 		$time = strftime("%X");//time
 		$date = strftime("%B %d, %Y");//date
-	$vendor = mysql_real_escape_string($_POST['dostawca']); 
-		echo $vendor;
+		//$vendor = mysql_real_escape_string($_POST['dostawca']); 
 		
 		foreach($_POST['publiczny'] as $list)
 		{
@@ -114,7 +106,8 @@
 			}
 		}
 
-		mysql_query("UPDATE list SET szczegoly='$details', data_edytowania='$date', czas_edytowania='$time' dostawca_id='$vendor' WHERE product_id='$id'") ;
+		mysql_query("UPDATE list SET szczegoly='$details', data_edytowania='$date', publiczny='$public', czas_edytowania='$time' WHERE product_id='$id'") ;
 		header("location: home.php");
-	} 
+	}
+		
 ?>

@@ -20,16 +20,16 @@
 
 		<div id="wrapper" style="text-align:center;">
 			<div id="header" style="clear:both;">
-				<h2>Początkowa strona</h2>
+				<a href="#" onClick="document.getElementById('main_frame').innerHTML ='<h3>Proszę wybrać szczegółowe dane w menu obok dla ich przeglądu</h3>' "> <h2>Początkowa strona</h2> </a>
 				<p style="text-align:right;"> Witam, <?php Print "$user"?>! <br/> <a href="logout.php">Wylogować się</a> </p> <!--Displays user's name-->		
 			</div>
-			<div id="main">
-				<div id="menu" style="border:0px solid #000; float:left; width:20%; "> 
+			<div id="main" style="height:300px">
+				<div id="menu" style="float:left; width:20%; "> 
 					<h4> Wybierz Liste dla pracy </h4> 
 					<a href="#" onClick="MainProd()" >Lista produktów</a> <br/>
 					<a href="#" onClick="MainVen()" > Lista dostawców </a>
 				</div>			
-				<div id="main_frame" style="border:0px solid red; float: left; width:78%; "> 
+				<div id="main_frame" style="float: left; width:78%; "> 
 					<h3> Proszę wybrać szczegółowe dane w menu obok dla ich przeglądu </h3>  
 				</div>
 			</div>
