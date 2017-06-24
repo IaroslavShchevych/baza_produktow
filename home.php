@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"> 
 		<title>Baza danych produktów</title>
 	</head>
 	<?php
@@ -18,22 +19,22 @@
 		
 		<!-- MAIN SECTIONS -->
 
-		<div id="wrapper" style="text-align:center;">
-			<div id="header" style="clear:both;">
+		<div id="wrapper">
+			<div id="header">
 				<a href="#" onClick="document.getElementById('main_frame').innerHTML ='<h3>Proszę wybrać szczegółowe dane w menu obok dla ich przeglądu</h3>' "> <h2>Początkowa strona</h2> </a>
 				<p style="text-align:right;"> Witam, <?php Print "$user"?>! <br/> <a href="logout.php">Wylogować się</a> </p> <!--Displays user's name-->		
 			</div>
-			<div id="main" style="height:300px">
-				<div id="menu" style="float:left; width:20%; "> 
+			<div id="main">
+				<div id="menu"> 
 					<h4> Wybierz Liste dla pracy </h4> 
 					<a href="#" onClick="MainProd()" >Lista produktów</a> <br/>
 					<a href="#" onClick="MainVen()" > Lista dostawców </a>
 				</div>			
-				<div id="main_frame" style="float: left; width:78%; "> 
+				<div id="main_frame"> 
 					<h3> Proszę wybrać szczegółowe dane w menu obok dla ich przeglądu </h3>  
 				</div>
 			</div>
-			<div id="footer" style="clear:both; padding:7px;">
+			<div id="footer">
 				<p><a href="https://sites.google.com/site/infoteczka/" >(c) ŻAK. Wrocław, 2017 </a></p>
 			</div>
 		</div>

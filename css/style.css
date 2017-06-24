@@ -1,0 +1,29 @@
+#wrapper {
+	text-align:center;
+}
+
+#header {
+	clear:both;
+}
+
+/*Contains #menu and #main_frame*/
+
+#main { 
+	height:300px
+}
+
+#menu {
+	float:left; 
+	width:20%; 
+}
+
+/* Contains main data output from tables*/
+#main_frame {
+	float: left; 
+	width:78%; 
+}
+
+#footer {
+	clear:both; 
+	padding:7px;
+}
