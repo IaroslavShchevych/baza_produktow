@@ -25,7 +25,7 @@
 				}
 		?>
 	</table>
-	<div id="add_vendor" style="text-align:left;"> 
+	<div id="add"> 
 		<form action="add_vendor.php" method="POST">
 			<h4>Dodać dostawce do listy dostawców:</h4>
 			Wprowadż nazwę: <input type="text" name="nazwa" required/><br/>

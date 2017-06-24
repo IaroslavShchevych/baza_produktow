@@ -13,11 +13,10 @@
         $date = strftime("%B %d, %Y");//date
         $decision ="no";
         $vendor = mysql_real_escape_string($_POST['dostawca']);
-        /*$ven = mysql_query("SELECT id FROM dostawca WHERE nazwa='$vendor");*/
         foreach($_POST['publiczny'] as $each_check) //gets the data from the checkbox
         {
             if($each_check !=null ){ //checks if the checkbox is checked
-                $decision = "yes"; //sets teh value
+                $decision = "yes"; //sets the value
             }
         }
         
@@ -27,6 +26,6 @@
     }
     else
     {
-        header("location:home.php"); //redirects back to hom
+        header("location:home.php"); //redirects back to home
     }
 ?>

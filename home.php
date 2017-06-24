@@ -20,8 +20,8 @@
 		<!-- MAIN SECTIONS -->
 
 		<div id="wrapper">
+			<a href="#" onClick="document.getElementById('main_frame').innerHTML ='<h3>Proszę wybrać szczegółowe dane w menu obok dla ich przeglądu</h3>' "> <h2>Początkowa strona</h2> </a>
 			<div id="header">
-				<a href="#" onClick="document.getElementById('main_frame').innerHTML ='<h3>Proszę wybrać szczegółowe dane w menu obok dla ich przeglądu</h3>' "> <h2>Początkowa strona</h2> </a>
 				<p style="text-align:right;"> Witam, <?php Print "$user"?>! <br/> <a href="logout.php">Wylogować się</a> </p> <!--Displays user's name-->		
 			</div>
 			<div id="main">
@@ -35,7 +35,7 @@
 				</div>
 			</div>
 			<div id="footer">
-				<p><a href="https://sites.google.com/site/infoteczka/" >(c) ŻAK. Wrocław, 2017 </a></p>
+				<p><a target="_blank" href="https://sites.google.com/site/infoteczka/" >(c) ŻAK. Wrocław, 2017 </a></p>
 			</div>
 		</div>
 		

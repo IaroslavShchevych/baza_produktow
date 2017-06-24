@@ -12,5 +12,8 @@
       Wprowadż hasło użytkownika: <input type="password" name="haslo" required="required" /> <br/>
       <input type="submit" value="Logować się"/>
     </form>
+	<div id="footer">
+				<p><a href="https://sites.google.com/site/infoteczka/" >(c) ŻAK. Wrocław, 2017 </a></p>
+	</div>
   </body>
 </html>

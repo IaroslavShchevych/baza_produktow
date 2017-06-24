@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css"> 
 		<title>Baza danych produktów</title>
 	</head>
 	<?php
@@ -15,13 +16,14 @@
 	$id_exists = false;
 	?>
 	<body>
-		<h3 align="center">Edytuj produkt</h3>
-		<div id="header" style="text-align:right">
+	<div id="wrapper">
+		<h3>Edytuj produkt</h3>
+		<div id="header">
 			<p>Witam <?php Print "$user"?>!</p> <!--Displays user's name-->
 			<a href="logout.php">Wylogować się</a><br/>
 			<a href="home.php">Powrot do początkowej</a>
 		</div>
-		<h4 align="center">Obecnie wybrane:</h4>
+		<h4>Obecnie wybrane:</h4>
 		<table border="1px" width="100%">
 			<tr>
 				<th>ID</th>
@@ -64,6 +66,7 @@
 			?>
 		</table>
 		<br/>
+	<div id="edit">
 		<?php
 		if($id_exists)
 		{
@@ -80,8 +83,10 @@
 			Print '<h2 align="center">Niema danych do edytowania.</h2>';
 		}
 		?>
-	<div id="footer" style="clear:both; padding:7px; text-align:center">
+	</div>
+	<div id="footer">
 				<p><a href="https://sites.google.com/site/infoteczka/" >(c) ŻAK. Wrocław, 2017 </a></p>
+	</div>
 	</div>
 	</body>
 </html>

@@ -4,6 +4,7 @@
 
 #header {
 	clear:both;
+	text-align: right;
 }
 
 /*Contains #menu and #main_frame*/
@@ -26,4 +27,10 @@
 #footer {
 	clear:both; 
 	padding:7px;
+	text-align: center;
+}
+
+/* Formating for add_vendor, add_product forms */
+#add, #edit {
+	text-align:left;
 }

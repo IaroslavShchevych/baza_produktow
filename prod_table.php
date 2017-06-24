@@ -1,4 +1,4 @@
-		<h2 align="center">Lista produktów</h2>
+		<h2>Lista produktów</h2>
 		<table border="1px" width="100%">
 			<tr>
 				<th>ID</th>
@@ -29,7 +29,7 @@
 				}
 			?>
 		</table>
-		<div id="add_prod" style="text-align:left;">
+		<div id="add">
 			<h4>Dodać produkt do listy produktów:</h4>
 			<form action="add.php" method="POST">
 			Dodać do listy produktów: <input type="text" name="szczegoly"/><br/>
