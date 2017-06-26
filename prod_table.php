@@ -31,21 +31,21 @@
 		</table>
 		<div id="add">
 			<h4>Dodać produkt do listy produktów:</h4>
-			<form action="add.php" method="POST">
-			Dodać do listy produktów: <input type="text" name="szczegoly"/><br/>
-			Czy publiczny zapis? <input type="checkbox" name="publiczny[]" value="yes"/><br/>
-			Zaznacz dostawcę: 
+			<form action="add.php" method="POST" style="width:30%">
+			<span>Dodać do listy produktów:</span> <input type="text" name="szczegoly" style="width:100%" required><br/>
+			<span>Zaznacz dostawcę:</span>
 			<?php
 				include "db_connect.php";
 				$result = mysql_query("SELECT id, nazwa FROM dostawca"); 
-				 echo "<select name='dostawca'>"; 
+				 echo "<select name='dostawca' style='width:100%' required>"; 
 				 while($row = mysql_fetch_array($result)) 
 				 { 
 				    echo "<option value='" . $row['id'] . "'>". $row['nazwa'] . "</option>";
 				 }
 				 echo "</select>"
 			?> <br/>
-			<input type="submit" value="Dodaj do listy"/>
+			<span>Czy publiczny zapis? </span> <input type="checkbox" name="publiczny[]" value="" style="width:10%"/><br/>
+			<input type="submit" value="Dodaj do listy" style="margin:7px" />
 			</form>
 		</div>
 		

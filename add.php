@@ -17,7 +17,9 @@
         {
             if($each_check !=null ){ //checks if the checkbox is checked
                 $decision = "yes"; //sets the value
-            }
+            } else {
+				$public= "no";
+			}
         }
         
         mysql_query("INSERT INTO list (szczegoly, data_wpisu, czas_wpisu, publiczny, dostawca_id) VALUES ('$details','$date','$time','$decision', '$vendor')"); //SQL query

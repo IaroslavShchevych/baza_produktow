@@ -26,11 +26,11 @@
 		?>
 	</table>
 	<div id="add"> 
-		<form action="add_vendor.php" method="POST">
+		<form action="add_vendor.php" method="POST"  style="width:30%">
 			<h4>Dodać dostawce do listy dostawców:</h4>
-			Wprowadż nazwę: <input type="text" name="nazwa" required/><br/>
-			Wprowadż kontakt: <input type="text" name="kontakt" required/><br/>
-			Wprowadż kraj: <input type="text" name="kraj" required/><br/>
-		<input type="submit" value="Dodaj dostawcę"/>
+			<span>Wprowadż nazwę:</span> <input type="text" name="nazwa" style="width:100%" required /><br/>
+			<span>Wprowadż kontakt: </span><input type="text" name="kontakt" style='width:100%' required /><br/>
+			<span>Wprowadż kraj: </span><input type="text" name="kraj" style='width:100%'required /><br/>
+		<input type="submit" value="Dodaj dostawcę" style="margin:7px" />
 		</form>
 	</div>

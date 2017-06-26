@@ -56,6 +56,7 @@
 								Print '<td align="center">'. $row['publiczny']. "</td>";
 								Print '<td align="center">'. $row['nazwa']. "</td>";
 							Print "</tr>";
+							$det_row = [$row['szczegoly'], $row['publicny']];
 						}
 					}
 					else
@@ -70,13 +71,13 @@
 		<?php
 		if($id_exists)
 		{
-		Print '
+		?>
 		<form action="edit.php" method="POST">
-			Nowy opis: <input type="text" name="szczegoly"/><br/>
-			Czy publiczny? <input type="checkbox" name="publiczny[]" value="tak"/>			
+			Nowy opis: <input type="text" name="szczegoly" value="<?php echo ($det_row[0]); ?>"/><br/>
+			Czy publiczny? <input type="checkbox" name="publiczny[]" value="yes"/>			
 			<input type="submit" value="Aktualizowac Liste"/>
 		</form>
-		';
+		<?php
 		}
 		else
 		{
@@ -101,6 +102,7 @@
 		$details = mysql_real_escape_string($_POST['szczegoly']);
 		$time = strftime("%X");//time
 		$date = strftime("%B %d, %Y");//date
+		$public = "no";
 		//$vendor = mysql_real_escape_string($_POST['dostawca']); 
 		
 		foreach($_POST['publiczny'] as $list)
@@ -108,6 +110,8 @@
 			if($list != null)
 			{
 				$public = "yes";
+			} else {
+				$public= "no";
 			}
 		}
 

@@ -52,6 +52,7 @@
 								Print '<td align="center">'. $row['kraj']. "</td>";
 								
 							Print "</tr>";
+							$row_values=[$row['nazwa'], $row['kontakt'], $row['kraj']];
 						}
 					}
 					else
@@ -66,13 +67,14 @@
 		<?php
 		if($id_exists)
 		{
-		Print '
-		<form action="edit_vendor.php" method="POST">
-			Wprowadż nową nazwę: <input type="text" name="nazwa" required/><br/>
-			Wprowadż nowy kontakt: <input type="text" name="kontakt" required/><br/>
-			Wprowadż nowy kraj: <input type="text" name="kraj" required/><br/>
+		?>
+		<form action="edit_vendor.php" style="width:30%" method="POST">
+			<span>Wprowadż nową nazwę:</span> <input type="text" id="edit_text" name="nazwa" value="<?php echo ($row_values[0]); ?>"  style='width:100%'/><br/>
+			<span>Wprowadż nowy kontakt: </span> <input type="text" name="kontakt" value="<?php echo ($row_values[1]); ?>" style='width:100%'/><br/>
+			<span>Wprowadż nowy kraj:</span> <input type="text" name="kraj" value="<?php echo ($row_values[2]); ?>" style='width:100%'/><br/>
 		<input type="submit" value="Aktualizuj dostawcę"/>
-		';
+		</form>
+		<?php
 		}
 		else
 		{
